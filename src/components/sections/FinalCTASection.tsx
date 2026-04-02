@@ -42,17 +42,21 @@ export default function FinalCTASection() {
             </p>
 
             <GradientHeading as="h2" className="mt-8 text-3xl md:text-4xl lg:text-5xl max-w-3xl">
-              ¿Listo Para Operar Como Un Institucional?
+              ¿Listo Para Darle Estructura a Tu Trading?
             </GradientHeading>
 
-            <div className="mt-10 flex justify-center">
+            <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto text-center mt-6 mb-10">
+              Aprende la estrategia sistematizada que rentabiliza tu trading y elimina la improvisación.
+            </p>
+
+            <div className="flex justify-center">
               <PremiumGlowButton
                 paddingX={48}
                 paddingY={22}
                 fontSize={18}
                 onClick={() => { window.location.href = "https://join.institucionaltradinglab.com/360/quiz" }}
               >
-                Acceder al Programa
+                Empieza Ahora
               </PremiumGlowButton>
             </div>
           </div>

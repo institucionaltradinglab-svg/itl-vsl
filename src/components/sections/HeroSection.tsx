@@ -37,10 +37,15 @@ export default function HeroSection() {
         {/* Heading */}
         <GradientHeading
           as="h1"
-          className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto mb-8 md:mb-10"
+          className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto mb-6"
         >
-          Un Sistema Institucional. Paso a Paso.
+          Convierte Tu Trading en un Proceso Claro y Replicable
         </GradientHeading>
+
+        {/* Subtitle */}
+        <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto text-center mb-10 md:mb-12">
+          El Bootcamp 3.0 convierte todo lo que sabes de trading en un sistema claro y replicable.
+        </p>
 
         {/* Video */}
         <div className="max-w-4xl w-full mx-auto aspect-video rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/50">

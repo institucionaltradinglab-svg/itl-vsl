@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
         <div className="text-center mb-16">
           <SectionLabel text="RESULTADOS" className="mb-6" />
           <GradientHeading as="h2" className="text-3xl md:text-4xl lg:text-5xl">
-            Resultados Reales de Estudiantes Reales
+            Resultados Reales de Alumnos Reales
           </GradientHeading>
         </div>
 
