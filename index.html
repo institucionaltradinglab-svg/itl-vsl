@@ -9,5 +9,74 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- ITL Tracking Pixel -->
+    <script>
+(function() {
+  var SUPABASE_URL = "https://lwjekqwfapjmryioxygy.supabase.co";
+  var ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3amVrcXdmYXBqbXJ5aW94eWd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc5ODM1ODEsImV4cCI6MjA4MzU1OTU4MX0.TDcgv1icYiqYyU8xEysKBLvtDGww_72ZAyLvuo4THSw";
+  var API = SUPABASE_URL + "/rest/v1/lead_events?apikey=" + ANON_KEY;
+
+  function anonId() {
+    var k = "lead_anon_id", id = localStorage.getItem(k);
+    if (!id) { id = crypto.randomUUID(); localStorage.setItem(k, id); }
+    return id;
+  }
+
+  function utms() {
+    var p = new URLSearchParams(location.search);
+    return {
+      utm_source: p.get("utm_source") || "direct",
+      utm_medium: p.get("utm_medium") || "none",
+      utm_campaign: p.get("utm_campaign") || null
+    };
+  }
+
+  function send(evt) {
+    fetch(API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": ANON_KEY,
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify(evt),
+      keepalive: true
+    }).catch(function(){});
+  }
+
+  var u = utms();
+  var campaign = u.utm_campaign || "vercel_landing";
+
+  send({
+    event_type: "page_view",
+    event_name: "page_view",
+    cta_id: "landing",
+    page_path: location.pathname,
+    campaign_id: campaign,
+    landing_variant: "vercel",
+    anon_id: anonId(),
+    metadata: { utm_source: u.utm_source, utm_medium: u.utm_medium, referrer: document.referrer || null }
+  });
+
+  document.addEventListener("click", function(e) {
+    var link = e.target.closest("a");
+    if (!link) return;
+    var href = link.getAttribute("href") || "";
+    if (href.indexOf("/360/quiz") === -1 && href.indexOf("360/quiz") === -1) return;
+
+    send({
+      event_type: "cta_click",
+      event_name: "cta_vercel_to_quiz",
+      cta_id: link.dataset.ctaId || "quiz_link",
+      page_path: location.pathname,
+      campaign_id: campaign,
+      landing_variant: "vercel",
+      anon_id: anonId(),
+      metadata: { utm_source: u.utm_source, href: href }
+    });
+  });
+})();
+    </script>
   </body>
 </html>
