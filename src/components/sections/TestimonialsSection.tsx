@@ -15,21 +15,21 @@ const PLACEHOLDERS = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="results" className="py-24 md:py-32 px-6">
+    <section id="results" className="py-12 md:py-32 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <SectionLabel text="RESULTADOS" className="mb-6" />
-          <GradientHeading as="h2" className="text-3xl md:text-4xl lg:text-5xl">
+          <GradientHeading as="h2" className="text-2xl md:text-4xl lg:text-5xl">
             Resultados Reales de Alumnos Reales
           </GradientHeading>
         </div>
 
         {/* Masonry-style columns */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+        <div className="columns-2 sm:columns-2 lg:columns-3 gap-3 md:gap-4">
           {PLACEHOLDERS.map(({ aspect, label }) => (
             <div
               key={label}
-              className={`break-inside-avoid mb-4 ${aspect} rounded-xl overflow-hidden border border-white/[0.06] transition-all duration-300 hover:border-white/[0.12]`}
+              className={`break-inside-avoid mb-3 md:mb-4 ${aspect} rounded-xl overflow-hidden border border-white/[0.06] transition-all duration-300 hover:border-white/[0.12]`}
               style={{
                 background: 'linear-gradient(to bottom right, hsl(222,47%,11%), hsl(222,47%,8%))',
               }}

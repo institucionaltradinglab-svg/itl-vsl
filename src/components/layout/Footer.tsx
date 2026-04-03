@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] py-8 px-6">
+    <footer className="border-t border-white/[0.06] py-6 md:py-8 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
         <p className="text-xs text-white/20">
           © 2026 Institucional Trading Lab

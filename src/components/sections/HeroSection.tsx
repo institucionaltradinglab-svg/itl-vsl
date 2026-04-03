@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center pt-28 md:pt-36 px-6 overflow-hidden"
+      className="relative flex flex-col items-center justify-start md:justify-center md:min-h-screen pt-8 md:pt-36 pb-12 md:pb-32 px-4 sm:px-6"
     >
       {/* Layer 1 — Floating particles (behind everything) */}
       <FloatingParticles
@@ -19,36 +19,36 @@ export default function HeroSection() {
 
       {/* Subtle white glow */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] pointer-events-none z-[1]"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[400px] pointer-events-none z-[1]"
         style={{
           background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.03), transparent 70%)',
         }}
       />
 
-      {/* Content — z-10 so particles stay behind */}
+      {/* Content */}
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
         {/* Logo */}
         <img
           src="/logo-itl.jpg"
           alt="Institucional Trading Lab"
-          className="h-8 md:h-10 w-auto mb-8 md:mb-10"
+          className="h-6 md:h-10 w-auto mb-4 md:mb-10"
         />
 
         {/* Heading */}
         <GradientHeading
           as="h1"
-          className="text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto mb-6"
+          className="text-2xl md:text-4xl lg:text-5xl max-w-3xl mx-auto mb-3 md:mb-6 leading-[1.15]"
         >
           Convierte Tu Trading en un Proceso Claro y Replicable
         </GradientHeading>
 
         {/* Subtitle */}
-        <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto text-center mb-10 md:mb-12">
+        <p className="text-sm md:text-lg text-white/40 max-w-2xl mx-auto text-center mb-6 md:mb-12">
           El Bootcamp 3.0 convierte todo lo que sabes de trading en un sistema claro y replicable.
         </p>
 
         {/* Video */}
-        <div className="max-w-4xl w-full mx-auto aspect-video rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/50">
+        <div className="max-w-4xl w-full mx-auto aspect-video rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/50 mb-6 md:mb-0">
           {/* TODO: Reemplazar con iframe de Vimeo/YouTube */}
           <div
             className="w-full h-full flex items-center justify-center group"
@@ -73,11 +73,11 @@ export default function HeroSection() {
         </div>
 
         {/* CTA */}
-        <div className="mt-10 flex justify-center">
+        <div className="mt-0 md:mt-10 w-full md:w-auto">
           <PremiumGlowButton
-            paddingX={48}
-            paddingY={22}
-            fontSize={18}
+            paddingX={36}
+            paddingY={16}
+            fontSize={16}
             onClick={() => { window.location.href = "https://join.institucionaltradinglab.com/360/quiz" }}
           >
             Empieza Ahora

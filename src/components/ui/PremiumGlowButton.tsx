@@ -54,7 +54,8 @@ export function PremiumGlowButton({
           : "none",
         background: "transparent",
         border: "none",
-        display: "inline-flex",
+        display: "flex",
+        width: "100%",
       }}
     >
       {/* Spinning conic gradient — creates the animated border */}
@@ -84,6 +85,7 @@ export function PremiumGlowButton({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          width: "100%",
         }}
       >
         <span

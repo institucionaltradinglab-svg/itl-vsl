@@ -64,29 +64,22 @@ export default function StatsSection() {
   ]
 
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section className="pt-6 pb-12 md:py-32 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto text-center">
-        <img
-          src="/logo-itl.jpg"
-          alt="Institucional Trading Lab"
-          className="h-12 w-auto mx-auto mb-8"
-          style={{ opacity: 0.8 }}
-        />
-
-        <GradientHeading as="h2" className="text-3xl md:text-4xl lg:text-5xl mb-4">
+        <GradientHeading as="h2" className="text-2xl md:text-4xl lg:text-5xl mb-3 md:mb-4">
           Los Resultados Hablan Por Sí Solos
         </GradientHeading>
 
-        <p className="text-base text-white/40 mb-16">
+        <p className="text-sm md:text-base text-white/40 mb-8 md:mb-16">
           Estos son algunos datos reales de alumnos que han aplicado la metodología de forma consistente.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {stats.map(({ hook, unit, title, desc }) => (
             <div
               key={title}
               ref={hook.ref}
-              className="rounded-2xl p-8 md:p-10 text-center transition-all duration-300"
+              className="rounded-2xl p-6 md:p-10 text-center transition-all duration-300"
               style={{
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid rgba(255,255,255,0.08)',
@@ -98,7 +91,7 @@ export default function StatsSection() {
                 ;(e.currentTarget as HTMLDivElement).style.border = '1px solid rgba(255,255,255,0.08)'
               }}
             >
-              <p className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+              <p className="text-3xl md:text-5xl font-bold text-white tracking-tight">
                 <span className="text-white/40 font-normal">+</span>
                 {hook.count.toLocaleString()}
                 {unit && <span className="text-lg text-white/30 font-normal ml-1">{unit}</span>}

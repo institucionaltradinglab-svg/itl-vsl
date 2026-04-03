@@ -5,10 +5,10 @@ const AVATARS = [0, 1, 2, 3]
 
 export default function FinalCTASection() {
   return (
-    <section id="cta" className="py-24 md:py-32 px-6">
+    <section id="cta" className="py-10 md:py-32 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <div
-          className="relative overflow-hidden rounded-3xl px-12 py-20 md:py-24 text-center"
+          className="relative overflow-hidden rounded-2xl sm:rounded-3xl px-6 md:px-12 py-12 md:py-24 text-center"
           style={{
             background: 'rgba(255,255,255,0.02)',
             border: '1px solid rgba(255,255,255,0.06)',
@@ -41,15 +41,15 @@ export default function FinalCTASection() {
               +500 estudiantes ya operan con el sistema
             </p>
 
-            <GradientHeading as="h2" className="mt-8 text-3xl md:text-4xl lg:text-5xl max-w-3xl">
+            <GradientHeading as="h2" className="mt-4 md:mt-8 text-2xl md:text-4xl lg:text-5xl max-w-3xl">
               ¿Listo Para Darle Estructura a Tu Trading?
             </GradientHeading>
 
-            <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto text-center mt-6 mb-10">
+            <p className="text-sm md:text-lg text-white/40 max-w-2xl mx-auto text-center mt-3 md:mt-6 mb-6 md:mb-10">
               Aprende la estrategia sistematizada que rentabiliza tu trading y elimina la improvisación.
             </p>
 
-            <div className="flex justify-center">
+            <div className="w-full sm:w-auto">
               <PremiumGlowButton
                 paddingX={48}
                 paddingY={22}
