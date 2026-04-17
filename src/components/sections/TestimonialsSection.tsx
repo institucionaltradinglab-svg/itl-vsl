@@ -1,17 +1,18 @@
 import SectionLabel from '../ui/SectionLabel'
 import GradientHeading from '../ui/GradientHeading'
 
-const PLACEHOLDERS = [
-  { aspect: 'aspect-[3/4]', label: 'Screenshot resultado #1' },
-  { aspect: 'aspect-square', label: 'Screenshot resultado #2' },
-  { aspect: 'aspect-video', label: 'Screenshot resultado #3' },
-  { aspect: 'aspect-[3/4]', label: 'Screenshot resultado #4' },
-  { aspect: 'aspect-[2/3]', label: 'Screenshot resultado #5' },
-  { aspect: 'aspect-square', label: 'Screenshot resultado #6' },
-  { aspect: 'aspect-[3/4]', label: 'Screenshot resultado #7' },
-  { aspect: 'aspect-video', label: 'Screenshot resultado #8' },
-  { aspect: 'aspect-[2/3]', label: 'Screenshot resultado #9' },
+const IMAGES = [
+  '/testimonios/t1.png',
+  '/testimonios/t2.png',
+  '/testimonios/t3.png',
+  '/testimonios/t4.png',
+  '/testimonios/t5.png',
+  '/testimonios/t6.png',
+  '/testimonios/t7.png',
 ]
+
+// Shuffle deterministically for SSR consistency
+const SHUFFLED = [...IMAGES].sort(() => 0.5 - Math.sin(IMAGES.length))
 
 export default function TestimonialsSection() {
   return (
@@ -24,19 +25,18 @@ export default function TestimonialsSection() {
           </GradientHeading>
         </div>
 
-        {/* Masonry-style columns */}
         <div className="columns-2 sm:columns-2 lg:columns-3 gap-3 md:gap-4">
-          {PLACEHOLDERS.map(({ aspect, label }) => (
+          {SHUFFLED.map((src, i) => (
             <div
-              key={label}
-              className={`break-inside-avoid mb-3 md:mb-4 ${aspect} rounded-xl overflow-hidden border border-white/[0.06] transition-all duration-300 hover:border-white/[0.12]`}
-              style={{
-                background: 'linear-gradient(to bottom right, hsl(222,47%,11%), hsl(222,47%,8%))',
-              }}
+              key={src}
+              className="break-inside-avoid mb-3 md:mb-4 rounded-xl overflow-hidden border border-white/[0.06] transition-all duration-300 hover:border-white/[0.12]"
             >
-              <div className="w-full h-full flex items-center justify-center p-4" style={{ minHeight: '120px' }}>
-                <span className="text-white/10 text-xs text-center">{label}</span>
-              </div>
+              <img
+                src={src}
+                alt={`Resultado alumno ${i + 1}`}
+                className="w-full h-auto block"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
