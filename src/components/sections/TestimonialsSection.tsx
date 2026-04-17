@@ -2,17 +2,29 @@ import SectionLabel from '../ui/SectionLabel'
 import GradientHeading from '../ui/GradientHeading'
 
 const IMAGES = [
+  '/testimonios/t8.jpg',
+  '/testimonios/t9.png',
   '/testimonios/t1.png',
-  '/testimonios/t2.png',
-  '/testimonios/t3.png',
+  '/testimonios/t17.png',
+  '/testimonios/t10.png',
   '/testimonios/t4.png',
+  '/testimonios/t14.png',
+  '/testimonios/t11.png',
+  '/testimonios/t19.png',
+  '/testimonios/t2.png',
+  '/testimonios/t16.png',
+  '/testimonios/t12.png',
+  '/testimonios/t20.png',
+  '/testimonios/t13.png',
   '/testimonios/t5.png',
+  '/testimonios/t15.png',
+  '/testimonios/t3.png',
+  '/testimonios/t18.png',
   '/testimonios/t6.png',
   '/testimonios/t7.png',
 ]
 
-// Shuffle deterministically for SSR consistency
-const SHUFFLED = [...IMAGES].sort(() => 0.5 - Math.sin(IMAGES.length))
+const SHUFFLED = IMAGES
 
 export default function TestimonialsSection() {
   return (
