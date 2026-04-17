@@ -17,7 +17,7 @@ const IMAGES = [
   '/testimonios/t15.png',
   '/testimonios/t3.png',
   '/testimonios/t18.png',
-  '/testimonios/t6.png',
+  '/testimonios/BEATE.png',
   '/testimonios/t7.png',
 ]
 
