@@ -23,6 +23,12 @@ const IMAGES = [
 
 const SHUFFLED = IMAGES
 
+const VIDEOS = [
+  { vimeoId: 'ALEXITO_ID', name: 'Alexito' },
+  { vimeoId: 'GERARD_ID', name: 'Gerard' },
+  { vimeoId: 'NAHUEL_ID', name: 'Nahuel' },
+]
+
 export default function TestimonialsSection() {
   return (
     <section id="results" className="py-12 md:py-32 px-4 sm:px-6">
@@ -45,6 +51,23 @@ export default function TestimonialsSection() {
                 alt={`Resultado alumno ${i + 1}`}
                 className="w-full h-auto block"
                 loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mt-3 md:mt-4">
+          {VIDEOS.map(({ vimeoId, name }) => (
+            <div
+              key={vimeoId}
+              className="rounded-xl overflow-hidden border border-white/[0.06] transition-all duration-300 hover:border-white/[0.12] aspect-video"
+            >
+              <iframe
+                src={`https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
+                className="w-full h-full"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title={`Testimonio de ${name}`}
               />
             </div>
           ))}
