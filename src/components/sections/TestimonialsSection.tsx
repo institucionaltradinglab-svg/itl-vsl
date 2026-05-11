@@ -23,11 +23,6 @@ const IMAGES = [
 
 const SHUFFLED = IMAGES
 
-const VIDEOS = [
-  { vimeoId: '1191263257', name: 'Alexito' },
-  { vimeoId: '1191263260', name: 'Gerard' },
-  { vimeoId: '1191263258', name: 'Nahuel' },
-]
 
 export default function TestimonialsSection() {
   return (
@@ -56,22 +51,6 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mt-3 md:mt-4">
-          {VIDEOS.map(({ vimeoId, name }) => (
-            <div
-              key={vimeoId}
-              className="rounded-xl overflow-hidden border border-white/[0.06] transition-all duration-300 hover:border-white/[0.12] aspect-video"
-            >
-              <iframe
-                src={`https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
-                className="w-full h-full"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title={`Testimonio de ${name}`}
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )
