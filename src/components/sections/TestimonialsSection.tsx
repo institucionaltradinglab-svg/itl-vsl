@@ -24,9 +24,9 @@ const IMAGES = [
 const SHUFFLED = IMAGES
 
 const VIDEOS = [
-  { vimeoId: 'ALEXITO_ID', name: 'Alexito' },
-  { vimeoId: 'GERARD_ID', name: 'Gerard' },
-  { vimeoId: 'NAHUEL_ID', name: 'Nahuel' },
+  { vimeoId: '1191263257', name: 'Alexito' },
+  { vimeoId: '1191263260', name: 'Gerard' },
+  { vimeoId: '1191263258', name: 'Nahuel' },
 ]
 
 export default function TestimonialsSection() {
